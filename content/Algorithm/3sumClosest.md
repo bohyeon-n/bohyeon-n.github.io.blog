@@ -1,3 +1,16 @@
++++
+categories = ["Algorithm"]
+comments = true
+date = "2018-4-01T16:59:13-04:00"
+draft = false
+showpagemeta = true
+showcomments = false
+slug = ""
+tags = ["Algorithm", "JS"]
+title = "3sum Closest"
+description = "3sum Closest"
++++
+
 # 3Sum Closest
 
 Given an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.
