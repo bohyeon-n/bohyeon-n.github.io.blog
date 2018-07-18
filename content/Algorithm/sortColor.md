@@ -1,3 +1,16 @@
++++
+categories = ["Algorithm"]
+comments = true
+date = "2018-7-18T23:59:13-04:00"
+draft = false
+showpagemeta = true
+showcomments = false
+slug = ""
+tags = ["Algorithm", "JS"]
+title = "sort colors"
+description = "sort colors"
++++
+
 # sort colors
 
 Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white and blue.
@@ -28,31 +41,35 @@ var sortColors = function(nums) {
 
 # 다른 사람 풀이
 
-- 원소의 종류가 3 가지이다. 0,1,2 라는 점을 이용한다.
-- 반복문을 돌면서 원소가 0 이라면, 첫 번 째 원소에 고정시킨다. 그리고 다음 0 을 찾아서 그 다음 원소로 정한다.
-- 2 라면, 맨 끝 원소로 고정시키고 맨 끝보다 index 가 작은 원소를 찾아서 다시 고정시킨다.
-- 이 작업을 계속해서 반복한다.
-- 그럼 0 과 2 가 맨 앞과 끝으로 정렬된다.
-- 1 은 자동적으로 그 중간에 위치하게 된다.
+- low, high, index 변수가 있다.
+- nums 배열을 돌면서 확인한다.
+- 0 이면, nums[low]에 위치한다.
+- low++ index++ 를 해준다. 0, 가장 낮은 수 이므로 고정시키면 되기 때문에 이제 더 이상 볼 필요가 없어졌다.
+- 다시 nums[index]를 확인한다.
+- 1 이면, index++ 를 해서 다음 숫자를 확인한다.
+- 2 이면, nums[high] nums 배열의 끝에 위치하고, 2 도 가장 큰 수이므로, 더이상 확인할 필요가 없으므로, nums[high]에 고정시키면 된다. high-- 해준다.
+- 계속해서 반복하다보면, 0 과 2 는 앞 뒤로 위치된다.
+- 1 은 자동으로 그 사이에 위치된다.
+
+* 나는 언제쯤 이런 생각을 할 수 있을까... 😱
 
 ```js
 var sortColors = function(nums) {
-  var low = 0,
-    high = nums.length - 1,
-    temp;
-
-  for (var i = 0; i <= high; ) {
+  let temp,
+    lo = 0,
+    hi = nums.length - 1;
+  for (let i = 0; i <= hi; ) {
     if (nums[i] === 0) {
       temp = nums[i];
-      nums[i] = nums[low];
-      nums[low] = temp;
+      nums[i] = nums[lo];
+      nums[lo] = temp;
+      lo++;
       i++;
-      low++;
-    } else if (nums[i] == 2) {
+    } else if (nums[i] === 2) {
       temp = nums[i];
-      nums[i] = nums[high];
-      nums[high] = temp;
-      high--;
+      nums[i] = nums[hi];
+      nums[hi] = temp;
+      hi--;
     } else {
       i++;
     }
