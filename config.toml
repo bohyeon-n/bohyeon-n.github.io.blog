@@ -24,7 +24,7 @@ enableRobotsTXT = true
 author = "Koo Bohyeon"
 intro = "안녕하세요. 구보현 블로그입니다."
 description = "개발자가 되기 위해 공부한 내용을 정리하는 블로그입니다."
-authorimage = "http://moviecitynews.com/wp-content/uploads/2010/07/ponyo.jpg"
+authorimage = "https://1.bp.blogspot.com/-vqrxB9q12r8/U-ZQ1zrFEOI/AAAAAAAAMK4/868QDbp_mII/s1600/ponyo1-701578.png"
 dateformat = "Jan 2, 2006"
 
 ## Site Meta Settings
