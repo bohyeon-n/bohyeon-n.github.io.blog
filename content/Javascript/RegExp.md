@@ -1,3 +1,16 @@
++++
+categories = ["Algorithm"]
+comments = true
+date = "2018-7-19T22:59:13-04:00"
+draft = false
+showpagemeta = true
+showcomments = false
+slug = ""
+tags = [ "JS"]
+title = "정규 표현식"
+description = "정규 표현식"
++++
+
 # 정규 표현식
 
 ## 정규표현식의 목적
